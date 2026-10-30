@@ -1,6 +1,26 @@
 {
   "cleanUrls": true,
   "headers": [
-    { "source": "/(.*)", "headers": [ { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" } ] }
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/case",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/case.html",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }

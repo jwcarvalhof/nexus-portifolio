@@ -68,7 +68,8 @@ img{display:block;max-width:100%}
 .shot{margin:0;max-width:1354px;width:100%;border-radius:16px;overflow:hidden;background:#111016;aspect-ratio:1354/759}
 .shot:first-child{aspect-ratio:1354/699}
 .shot img{width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .8s var(--ease)}
-.shot img.is-in{opacity:1}
+.shot img.is-in,.profiles img.is-in{opacity:1}
+.profiles img{opacity:0;transition:opacity .8s var(--ease)}
 
 /* ===================== MAIS DETALHES ===================== */
 .more{margin-top:160px;text-align:center}
@@ -85,7 +86,7 @@ img{display:block;max-width:100%}
 .card__img{border-radius:16px;overflow:hidden;aspect-ratio:1354/699;background:#111016}
 .card__img img{width:100%;height:100%;object-fit:cover;object-position:top;transition:transform 1.1s var(--ease)}
 .card__row{display:grid;grid-template-columns:50px 1fr auto;column-gap:16px;align-items:center;margin-top:20px}
-.card__mark{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:#16151C;border:1px solid rgba(255,255,255,.12);font-family:var(--head);font-weight:500;font-size:20px;grid-row:span 2;align-self:center}
+.card__mark{width:50px;height:50px;border-radius:50%;overflow:hidden;display:block;background:#F1ECE6;grid-row:span 2;align-self:center}.card__mark svg{width:100%;height:100%;display:block}
 .card__name{font-size:20px;line-height:28px;color:var(--white);font-weight:500}
 .card__year{font-size:16px;line-height:28px;text-align:right}
 .card__cat{grid-column:2 / span 2;font-size:16px;line-height:24px;color:var(--muted)}
@@ -129,6 +130,51 @@ img{display:block;max-width:100%}
   *,*::before,*::after{transition-duration:.01ms !important}
   html{scroll-behavior:auto}
 }
+
+/* ===================== CAPÍTULOS DO CASE ===================== */
+.site{display:inline-flex;align-items:center;gap:10px;margin-top:40px;padding:12px 24px;border-radius:999px;border:1px solid rgba(255,255,255,.28);font-size:16px;line-height:1.2;transition:background-color .25s,border-color .25s,color .25s}
+.site:hover{background:var(--white);color:#000;border-color:var(--white)}
+.site svg{width:12px;height:12px}
+.chapter{margin-top:160px}
+.chapter__head{display:grid;grid-template-columns:40.515% 54.19%;column-gap:2.72%;margin-bottom:56px;align-items:start}
+.eyebrow{font-size:16px;line-height:32px;text-transform:uppercase;color:rgba(255,255,255,.6)}
+.chapter__title{margin:0;font-family:var(--head);font-weight:500;font-size:40px;line-height:48px}
+.chapter__text{margin:16px 0 0;font-size:20px;line-height:30px;color:#BDBCC4;max-width:640px}
+.quote{position:relative}
+.quote__over{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;background:radial-gradient(ellipse at center,rgba(8,8,12,.55),rgba(8,8,12,.15) 70%)}
+.quote__over p{margin:0;font-family:var(--head);font-weight:500;font-size:clamp(24px,3vw,44px);line-height:1.15;max-width:20ch}
+.quote__over span{display:block;font-size:14px;letter-spacing:.12em;color:rgba(255,255,255,.6);margin-bottom:16px;font-family:var(--sans);font-weight:400}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.box{background:#111016;border:1px solid #24232B;border-radius:16px;padding:32px}
+.box h3{margin:0;font-family:var(--head);font-weight:500;font-size:22px;line-height:30px}
+.box p{margin:10px 0 0;color:#BDBCC4;font-size:16px;line-height:24px}
+.box small{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-bottom:14px}
+.box.is-hl{border-color:rgba(121,84,246,.6)}
+.profiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
+.profiles figure{margin:0}
+.profiles img{width:100%;height:auto;border-radius:16px}
+.profiles figcaption{margin-top:20px}
+.profiles figcaption b{display:block;font-weight:500;font-size:18px;line-height:26px}
+.profiles figcaption span{display:block;color:#BDBCC4;font-size:16px;line-height:24px;margin-top:4px}
+.chapter .trio{margin-top:24px}
+.kit{display:flex;flex-wrap:wrap;gap:48px;align-items:center;margin-top:32px}
+.sw{display:flex;gap:12px}
+.sw i{width:44px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,.18);display:block}
+.aa{display:flex;gap:28px;align-items:baseline;font-size:48px;line-height:1}
+.ending{margin-top:200px;text-align:center}
+.ending .h{max-width:900px;margin-inline:auto}
+.ending p{margin:24px auto 0;max-width:36ch;font-size:20px;line-height:30px;color:#BDBCC4}
+.ending .btn{margin-top:40px;gap:10px}
+.ending .btn svg{width:13px;height:13px}
+.shot img{height:100%}
+@media (max-width:1024px){.chapter__head{grid-template-columns:1fr;row-gap:12px}}
+@media (max-width:700px){
+  .chapter{margin-top:104px}.chapter__head{margin-bottom:32px}
+  .chapter__title{font-size:30px;line-height:38px}.chapter__text{font-size:18px;line-height:28px}
+  .trio,.profiles{grid-template-columns:1fr;gap:16px}
+  .box{padding:24px}
+  .ending{margin-top:120px}
+}
 [data-i18n]{transition:opacity .2s}
 .is-swapping [data-i18n]{opacity:0}
 </style>
@@ -157,19 +203,69 @@ img{display:block;max-width:100%}
         <div><dt data-i18n="fClient">Cliente</dt><dd data-i18n="vClient">Nexus</dd></div>
         <div><dt data-i18n="fServices">Serviços</dt><dd data-i18n="vServices">UX/UI e Web Design</dd></div>
       </dl>
+      <a class="site" href="https://nexus-jw.vercel.app/?lang=pt" data-href-pt="https://nexus-jw.vercel.app/?lang=pt" data-href-en="https://nexus-jw.vercel.app/?lang=en" target="_blank" rel="noopener"><span data-i18n="siteBtn">Ver o site</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
     </div>
   </section>
 
   <section class="work" aria-label="Trabalho">
-    <figure class="shot"><img src="assets/nexus-1.webp" data-src-pt="assets/nexus-1.webp" data-src-en="assets/nexus-1-en.webp" data-i18n-alt="alt1" alt="Abertura da landing page da Nexus, com o N em 3D na frente do nome" width="2708" height="1398" fetchpriority="high"></figure>
-    <figure class="shot"><img src="assets/nexus-2.webp" data-src-pt="assets/nexus-2.webp" data-src-en="assets/nexus-2-en.webp" data-i18n-alt="alt2" alt="Steam, Xbox e Epic Games se conectando à Nexus" width="2708" height="1518" loading="lazy"></figure>
-    <figure class="shot"><img src="assets/nexus-3.webp" data-src-pt="assets/nexus-3.webp" data-src-en="assets/nexus-3-en.webp" data-i18n-alt="alt3" alt="Recomendação de God of War Ragnarök com 96% de compatibilidade e outras sugestões ao lado" width="2708" height="1518" loading="lazy"></figure>
-    <figure class="shot"><img src="assets/nexus-4.webp" data-src-pt="assets/nexus-4.webp" data-src-en="assets/nexus-4-en.webp" data-i18n-alt="alt4" alt="Três telas da Nexus no celular: abertura, descoberta e recomendação" width="2708" height="1518" loading="lazy"></figure>
+    <figure class="shot" style="aspect-ratio:2708/1398"><img src="assets/nexus-1.webp" data-src-pt="assets/nexus-1.webp" data-src-en="assets/nexus-1-en.webp" data-i18n-alt="alt1" alt="Abertura da landing page da Nexus, com o N em 3D na frente do nome" width="2708" height="1398" fetchpriority="high"></figure>
   </section>
 
-  <section class="more">
-    <h2 class="more__title" data-i18n="moreTitle">Quer ver mais detalhes?</h2>
-    <a class="btn" href="case.html?lang=pt" data-href-pt="case.html?lang=pt" data-href-en="case.html?lang=en" data-i18n="moreBtn">Ler o estudo de caso</a>
+  <section class="chapter" aria-labelledby="c-prob">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="probE">O problema</span><div><h2 class="chapter__title" id="c-prob" data-i18n="probT">Tanta opção, e nenhuma resposta.</h2><p class="chapter__text" data-i18n="probP">Existem milhares de jogos disponíveis em diferentes plataformas. Na hora de escolher, o excesso atrapalha mais do que ajuda.</p></div></div>
+    <figure class="shot quote" style="aspect-ratio:1600/700"><img src="assets/nexus-wall.webp" data-i18n-alt="altWall" alt="Uma parede de capas de jogos escurecidas" width="1600" height="700" loading="lazy"><div class="quote__over"><p><span data-i18n="quoteE">O JOGADOR</span><span data-i18n="quoteT" style="display:inline;font:inherit;letter-spacing:0;color:inherit;margin:0">sabe que quer jogar alguma coisa, mas nem sempre sabe o quê.</span></p></div></figure>
+  </section>
+
+  <section class="chapter" aria-labelledby="c-sol">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="solE">A solução</span><div><h2 class="chapter__title" id="c-sol" data-i18n="solT">Começar pelo que você já joga.</h2><p class="chapter__text" data-i18n="solP">A Nexus parte dos jogos que você já conhece e transforma esse histórico em novas possibilidades de descoberta.</p></div></div>
+    <div class="trio">
+      <div class="box"><h3 data-i18n="s1T">Você joga</h3><p data-i18n="s1P">Seus jogos, suas horas e suas conquistas contam uma história.</p></div>
+      <div class="box"><h3 data-i18n="s2T">A Nexus entende</h3><p data-i18n="s2P">Ela percebe os gêneros e o tipo de experiência que você mais procura.</p></div>
+      <div class="box is-hl"><h3 data-i18n="s3T">Você descobre</h3><p data-i18n="s3P">E recebe jogos que fazem sentido para o seu jeito de jogar.</p></div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="conE">Conecte suas plataformas</span><div><h2 class="chapter__title" data-i18n="conT">Tudo num só lugar.</h2><p class="chapter__text" data-i18n="conP">Steam, Xbox e Epic Games reunidas numa única biblioteca. Você não precisa mais abrir uma loja por vez para lembrar o que tem.</p></div></div>
+    <figure class="shot" style="aspect-ratio:2708/1518"><img src="assets/nexus-2.webp" data-src-pt="assets/nexus-2.webp" data-src-en="assets/nexus-2-en.webp" data-i18n-alt="alt2" alt="Steam, Xbox e Epic Games se conectando à Nexus" width="2708" height="1518" loading="lazy"></figure>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="disE">Descubra novos jogos</span><div><h2 class="chapter__title" data-i18n="disT">Além do que você já conhece.</h2><p class="chapter__text" data-i18n="disP">Cards com a capa, o gênero, as plataformas disponíveis e a compatibilidade de cada jogo com o seu perfil.</p></div></div>
+    <figure class="shot" style="aspect-ratio:3200/952"><img src="assets/nexus-discover.webp" data-src-pt="assets/nexus-discover.webp" data-src-en="assets/nexus-discover-en.webp" data-i18n-alt="altDis" alt="Carrossel de jogos com capas, gêneros, plataformas e nota de compatibilidade" width="3200" height="952" loading="lazy"></figure>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="proE">Conheça seu perfil</span><div><h2 class="chapter__title" data-i18n="proT">Seu jeito de jogar, organizado.</h2><p class="chapter__text" data-i18n="proP">A Nexus reúne sua biblioteca, seus gêneros favoritos e o que você procura em um jogo num só perfil.</p></div></div>
+    <div class="profiles">
+      <figure><img src="assets/nexus-profile1.webp" data-src-pt="assets/nexus-profile1.webp" data-src-en="assets/nexus-profile1-en.webp" data-i18n-alt="altP1" alt="Cartão de perfil com a biblioteca de jogos" width="1042" height="968" loading="lazy"><figcaption><b data-i18n="p1T">Sua biblioteca</b><span data-i18n="p1P">Os jogos de todas as plataformas, juntos.</span></figcaption></figure>
+      <figure><img src="assets/nexus-profile2.webp" data-src-pt="assets/nexus-profile2.webp" data-src-en="assets/nexus-profile2-en.webp" data-i18n-alt="altP2" alt="Cartão de perfil com gêneros favoritos e interesses" width="1042" height="752" loading="lazy"><figcaption><b data-i18n="p2T">Seus interesses</b><span data-i18n="p2P">Os gêneros e o clima que você mais repete.</span></figcaption></figure>
+      <figure><img src="assets/nexus-profile3.webp" data-src-pt="assets/nexus-profile3.webp" data-src-en="assets/nexus-profile3-en.webp" data-i18n-alt="altP3" alt="Cartão de perfil com o resumo do jeito de jogar" width="1042" height="904" loading="lazy"><figcaption><b data-i18n="p3T">Seu perfil</b><span data-i18n="p3P">Um retrato de como você joga.</span></figcaption></figure>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="recE">Recomendações que fazem sentido</span><div><h2 class="chapter__title" data-i18n="recT">Cada jogo vem com o seu porquê.</h2><p class="chapter__text" data-i18n="recP">A Nexus não mostra só o que combina. Ela mostra também por que combina, de um jeito simples e visual.</p></div></div>
+    <figure class="shot" style="aspect-ratio:2708/1518"><img src="assets/nexus-3.webp" data-src-pt="assets/nexus-3.webp" data-src-en="assets/nexus-3-en.webp" data-i18n-alt="alt3" alt="Recomendação de God of War Ragnarök com 96% de compatibilidade e outras sugestões ao lado" width="2708" height="1518" loading="lazy"></figure>
+    <div class="trio">
+      <div class="box"><small data-i18n="w1E">O que você jogou</small><h3 data-i18n="w1T">86 horas em Elden Ring</h3><p data-i18n="w1P">Você gosta de combate exigente.</p></div>
+      <div class="box"><small data-i18n="w2E">O que você terminou</small><h3>Baldur's Gate 3</h3><p data-i18n="w2P">Você curte uma narrativa forte.</p></div>
+      <div class="box"><small data-i18n="w3E">O que cabe no seu tempo</small><h3 data-i18n="w3T">Cerca de 25 horas</h3><p data-i18n="w3P">Boa para quem prefere jogos mais curtos.</p></div>
+    </div>
+  </section>
+
+  <section class="chapter">
+    <div class="chapter__head"><span class="eyebrow" data-i18n="expE">Uma experiência simples</span><div><h2 class="chapter__title" data-i18n="expT">Direta, moderna e fácil de explorar.</h2><p class="chapter__text" data-i18n="expP">A interface foi pensada para ser clara de primeira. O visual é escuro e cinematográfico, com um toque do universo gamer, sem exageros.</p>
+      <div class="kit" aria-hidden="true"><div class="sw"><i style="background:#0B0D12"></i><i style="background:#181C27"></i><i style="background:#7C5CFF"></i><i style="background:#00D4FF"></i><i style="background:#FF4D8D"></i></div><div class="aa"><span style="font-weight:500">Aa</span><span style="font-weight:400;color:#BDBCC4">Aa</span></div></div>
+    </div></div>
+    <figure class="shot" style="aspect-ratio:2708/1518"><img src="assets/nexus-4.webp" data-src-pt="assets/nexus-4.webp" data-src-en="assets/nexus-4-en.webp" data-i18n-alt="alt4" alt="Três telas da Nexus no celular: abertura, descoberta e recomendação" width="2708" height="1518" loading="lazy"></figure>
+  </section>
+
+  <section class="ending" aria-labelledby="c-end">
+    <span class="eyebrow" data-i18n="endE">Objetivo final</span>
+    <h2 class="h" id="c-end" style="margin-top:16px" data-i18n="endT">O que eu vou jogar agora?</h2>
+    <p data-i18n="endP">A Nexus transforma essa dúvida em uma experiência de descoberta.</p>
+    <a class="btn" href="https://nexus-jw.vercel.app/?lang=pt" data-href-pt="https://nexus-jw.vercel.app/?lang=pt" data-href-en="https://nexus-jw.vercel.app/?lang=en" target="_blank" rel="noopener"><span data-i18n="endBtn">Ver a Nexus no ar</span><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 9l6-6M4 3h5v5"/></svg></a>
   </section>
 
   <section class="next" aria-labelledby="next-title">
@@ -177,7 +273,7 @@ img{display:block;max-width:100%}
     <a class="card" href="https://lueur-portifolio.vercel.app/" target="_blank" rel="noopener">
       <div class="card__img"><img src="assets/next-lueur.webp" data-src-pt="assets/next-lueur.webp" data-src-en="assets/next-lueur-en.webp" data-i18n-alt="altNext" alt="Página inicial da Lueur" width="1440" height="900" loading="lazy"></div>
       <div class="card__row">
-        <span class="card__mark" aria-hidden="true">L</span>
+        <span class="card__mark" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" fill="#F1ECE6"/><ellipse cx="32" cy="22" rx="11" ry="8" fill="#C9AFA3"/><rect x="22" y="31" width="20" height="22" rx="4" fill="none" stroke="#292827" stroke-width="2.5"/></svg></span>
         <span class="card__name">Lueur</span>
         <span class="card__year">2026</span>
         <span class="card__cat" data-i18n="nextCat">Web Design</span>
@@ -201,7 +297,8 @@ img{display:block;max-width:100%}
 (() => {
 "use strict";
 const I18N = {
-  pt:{ navWork:"Trabalhos", navAbout:"Sobre", navContact:"Contato",
+  pt:{ siteBtn:"Ver o site", probE:"O problema", probT:"Tanta opção, e nenhuma resposta.", probP:"Existem milhares de jogos disponíveis em diferentes plataformas. Na hora de escolher, o excesso atrapalha mais do que ajuda.", quoteE:"O JOGADOR", quoteT:"sabe que quer jogar alguma coisa, mas nem sempre sabe o quê.", altWall:"Uma parede de capas de jogos escurecidas", solE:"A solução", solT:"Começar pelo que você já joga.", solP:"A Nexus parte dos jogos que você já conhece e transforma esse histórico em novas possibilidades de descoberta.", s1T:"Você joga", s1P:"Seus jogos, suas horas e suas conquistas contam uma história.", s2T:"A Nexus entende", s2P:"Ela percebe os gêneros e o tipo de experiência que você mais procura.", s3T:"Você descobre", s3P:"E recebe jogos que fazem sentido para o seu jeito de jogar.", conE:"Conecte suas plataformas", conT:"Tudo num só lugar.", conP:"Steam, Xbox e Epic Games reunidas numa única biblioteca. Você não precisa mais abrir uma loja por vez para lembrar o que tem.", disE:"Descubra novos jogos", disT:"Além do que você já conhece.", disP:"Cards com a capa, o gênero, as plataformas disponíveis e a compatibilidade de cada jogo com o seu perfil.", altDis:"Carrossel de jogos com capas, gêneros, plataformas e nota de compatibilidade", proE:"Conheça seu perfil", proT:"Seu jeito de jogar, organizado.", proP:"A Nexus reúne sua biblioteca, seus gêneros favoritos e o que você procura em um jogo num só perfil.", p1T:"Sua biblioteca", p1P:"Os jogos de todas as plataformas, juntos.", altP1:"Cartão de perfil com a biblioteca de jogos", p2T:"Seus interesses", p2P:"Os gêneros e o clima que você mais repete.", altP2:"Cartão de perfil com gêneros favoritos e interesses", p3T:"Seu perfil", p3P:"Um retrato de como você joga.", altP3:"Cartão de perfil com o resumo do jeito de jogar", recE:"Recomendações que fazem sentido", recT:"Cada jogo vem com o seu porquê.", recP:"A Nexus não mostra só o que combina. Ela mostra também por que combina, de um jeito simples e visual.", w1E:"O que você jogou", w1T:"86 horas em Elden Ring", w1P:"Você gosta de combate exigente.", w2E:"O que você terminou", w2P:"Você curte uma narrativa forte.", w3E:"O que cabe no seu tempo", w3T:"Cerca de 25 horas", w3P:"Boa para quem prefere jogos mais curtos.", expE:"Uma experiência simples", expT:"Direta, moderna e fácil de explorar.", expP:"A interface foi pensada para ser clara de primeira. O visual é escuro e cinematográfico, com um toque do universo gamer, sem exageros.", endE:"Objetivo final", endT:"O que eu vou jogar agora?", endP:"A Nexus transforma essa dúvida em uma experiência de descoberta.", endBtn:"Ver a Nexus no ar",
+    navWork:"Trabalhos", navAbout:"Sobre", navContact:"Contato",
     text:"A Nexus é uma plataforma conceitual que ajuda jogadores a descobrir novos jogos pelo que realmente gostam de jogar. As bibliotecas ficam espalhadas entre Steam, Xbox e Epic, e com tantos títulos o excesso atrapalha mais do que ajuda. Criei a marca, o design system e a landing page, que reúne tudo num só lugar e mostra por que cada jogo combina com quem joga.",
     fYear:"Ano", fClient:"Cliente", fServices:"Serviços", vClient:"Nexus", vServices:"UX/UI e Web Design",
     alt1:"Abertura da landing page da Nexus, com o N em 3D na frente do nome",
@@ -211,7 +308,8 @@ const I18N = {
     moreTitle:"Quer ver mais detalhes?", moreBtn:"Ler o estudo de caso",
     nextTitle:"Próximo projeto", nextCat:"Web Design", altNext:"Página inicial da Lueur",
     footTitle:"Vamos criar algo especial", portfolio:"Portfólio", available:"Disponível para novos projetos", copied:"E-mail copiado" },
-  en:{ navWork:"Work", navAbout:"About", navContact:"Contact",
+  en:{ siteBtn:"Visit the site", probE:"The problem", probT:"So many options, and no answer.", probP:"There are thousands of games available across different platforms. When it's time to choose, the excess gets in the way more than it helps.", quoteE:"THE PLAYER", quoteT:"knows they want to play something, but doesn't always know what.", altWall:"A wall of darkened game covers", solE:"The solution", solT:"Start with what you already play.", solP:"Nexus starts from the games you already know and turns that history into new ways to discover.", s1T:"You play", s1P:"Your games, your hours and your achievements tell a story.", s2T:"Nexus understands", s2P:"It notices the genres and the kind of experience you look for most.", s3T:"You discover", s3P:"And you get games that make sense for the way you play.", conE:"Connect your platforms", conT:"Everything in one place.", conP:"Steam, Xbox and Epic Games gathered in a single library. No more opening one store at a time to remember what you own.", disE:"Discover new games", disT:"Beyond what you already know.", disP:"Cards with the cover, genre, available platforms and each game's compatibility with your profile.", altDis:"Game carousel with covers, genres, platforms and compatibility score", proE:"Meet your profile", proT:"Your way of playing, organized.", proP:"Nexus brings your library, your favorite genres and what you look for in a game into a single profile.", p1T:"Your library", p1P:"Games from every platform, together.", altP1:"Profile card with the game library", p2T:"Your interests", p2P:"The genres and moods you repeat most.", altP2:"Profile card with favorite genres and interests", p3T:"Your profile", p3P:"A portrait of how you play.", altP3:"Profile card with a summary of how you play", recE:"Recommendations that make sense", recT:"Every game comes with its why.", recP:"Nexus doesn't just show what matches. It also shows why it matches, in a simple and visual way.", w1E:"What you played", w1T:"86 hours in Elden Ring", w1P:"You enjoy demanding combat.", w2E:"What you finished", w2P:"You like a strong story.", w3E:"What fits your time", w3T:"About 25 hours", w3P:"Good for those who prefer shorter games.", expE:"A simple experience", expT:"Direct, modern and easy to explore.", expP:"The interface was designed to be clear at first glance. The look is dark and cinematic, with a touch of the gaming universe, without excess.", endE:"Final goal", endT:"What am I going to play now?", endP:"Nexus turns that question into a discovery experience.", endBtn:"See Nexus live",
+    navWork:"Work", navAbout:"About", navContact:"Contact",
     text:"Nexus is a concept platform that helps players discover new games based on what they truly enjoy playing. Libraries are scattered across Steam, Xbox and Epic, and with so many titles the excess gets in the way. I designed the brand, the design system and the landing page, which brings it all into one place and shows why each game fits the person playing.",
     fYear:"Year", fClient:"Client", fServices:"Services", vClient:"Nexus", vServices:"UX/UI and Web Design",
     alt1:"Nexus landing page opening, with the 3D N in front of the name",
@@ -255,7 +353,7 @@ $$("[data-set-lang]").forEach(b => b.addEventListener("click", () => {
 applyLang(lang, false);
 
 /* imagens entram com um fade quando terminam de carregar, sem saltos de layout */
-$$(".shot img").forEach(img => {
+$$(".shot img, .profiles img").forEach(img => {
   const on = () => img.classList.add("is-in");
   if (img.complete && img.naturalWidth) on(); else { img.addEventListener("load", on, { once:true }); img.addEventListener("error", on, { once:true }); }
 });
